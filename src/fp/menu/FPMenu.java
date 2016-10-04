@@ -18,6 +18,8 @@ public class FPMenu {
         // Menu en consola JAVA
         
         System.out.println("La opcion elegida es:" + menu());
+        area = calcularAreas();
+        
         
     }
     
@@ -38,6 +40,7 @@ public class FPMenu {
         return opcion;
     }
     
+    
     public static double calcularAreas (int op){
         double area;
         switch (op){
@@ -55,6 +58,42 @@ public class FPMenu {
                 
         }
         return area;
+    }
+    
+    public static double areaCuadrado (){
+        double ladoC, areaC;
+        System.out.println("Introduce el lado del cuadrado:");
+        Scanner entradaLado = new Scanner(System.in);
+        ladoC = entradaLado.nextDouble();
+        areaC = Math.pow(ladoC,2);
+        return areaC;
+    }
+    
+    public static double areaTriangulo(){
+        double base, altura, areaT;
+        System.out.println("Introduce la base del triangulo:");
+        Scanner entradaBase = new Scanner (System.in);
+        base = entradaBase.nextDouble();
+        System.out.println("Introduce la altura del triangulo:");
+        Scanner entradaAltura = new Scanner(System.in);
+        altura = entradaAltura.nextDouble();
+        areaT = (base*altura)/2;
+        return areaT;
+    }
+    
+    public static double areaCirculo(){
+        final double pi;
+        pi = 3.1416;
+        double radio, areaCi;
+        System.out.println("Introduce el radio del circulo:");
+        Scanner entradaRadio = new Scanner(System.in);
+        radio = entradaRadio.nextDouble();
+        areaCi = ((pi)*(Math.pow(radio, 2)));
+        return areaCi;
+    }
+    
+    public static char mensajeSalida(){
+        System.out.println("Vuelve a seleccionar alguna de las opciones mencionadas");
     }
 }
 
