@@ -17,8 +17,11 @@ public class FPMenu {
     public static void main(String[] args) {
         // Menu en consola JAVA
         
-        System.out.println("La opcion elegida es:" + menu());
-        area = calcularAreas();
+        double resultado;
+        int r;
+        r = menu();
+        resultado = calcularAreas(r);
+        System.out.println("El area es:" + resultado);
         
         
     }
@@ -54,7 +57,8 @@ public class FPMenu {
                 area = areaTriangulo();
                 break;
             default:
-                area = mensajeSalida();
+                mensajeSalida();
+                area = 0;
                 
         }
         return area;
@@ -92,7 +96,7 @@ public class FPMenu {
         return areaCi;
     }
     
-    public static char mensajeSalida(){
+    public static void mensajeSalida(){
         System.out.println("Vuelve a seleccionar alguna de las opciones mencionadas");
     }
 }
